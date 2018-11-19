@@ -1,2 +1,3 @@
 # WMI-probe
-WMI Probe using PowerShell
+WMI Probe using PowerShell.
+
