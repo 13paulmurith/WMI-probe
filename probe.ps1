@@ -20,10 +20,10 @@ function Probe() {
   {
     $pc = $data.PC
     $Filter = 'Microsoft|Intel|Nvidia|Java'
-    $Applis = Get-WmiObject -Class Win32_Product -ComputerName $poste -ErrorAction 'SilentlyContinue' | Where {$_.Name -notmatch $Filter} | Select Name
+    $Applis = Get-WmiObject -Class Win32_Product -ComputerName $pc -ErrorAction 'SilentlyContinue' | Where {$_.Name -notmatch $Filter} | Select Name
     $nmbApplis = $Applis.count
     $nomApplis = $Applis.Name -join ', '
-    if ($nmbApplis -gt 0){SemdMail}
+    if ($nmbApplis -gt 0){SendMail}
   }
 }
 Probe
